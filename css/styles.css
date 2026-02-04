@@ -31,3 +31,22 @@ body {
   color: white;
   backdrop-filter: blur(6px);
 }
+
+/* === estilos crucigrama === */
+#crucigrama {
+  margin-top: 20px;
+}
+
+.fila-crucigrama {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.fila-crucigrama span {
+  min-width: 160px;
+}
+
+.fila-crucigrama input {
+  padding: 6px;
+}
