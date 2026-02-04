@@ -1,16 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
+  <title>Grupo Intermedio</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#1e1e1e" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- ICONOS -->
+  <link rel="icon" href="assets/icon-192.png" />
+  <link rel="apple-touch-icon" href="assets/icon-192.png" />
+
+  <!-- CSS GLOBAL -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- CSS PROPIO DEL INDEX (PISA TODO) -->
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: url("assets/inicio.png") no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* 🔴 blindaje contra CSS roto */
+    .pantalla {
+      display: none !important;
+      height: 100vh;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .pantalla.activa {
+      display: flex !important;
+    }
+
+    .btn {
+      background: rgba(0, 0, 0, 0.75);
+      color: #fff;
+      border: none;
+      padding: 16px 26px;
+      margin: 12px;
+      font-size: 18px;
+      border-radius: 12px;
+      width: 80%;
+      max-width: 320px;
+    }
+
+    .btn:active {
+      transform: scale(0.96);
+    }
+  </style>
 </head>
-<body class="screen">
 
-  <button class="button" onclick="location.href='menu.html'">
-    Menu
-  </button>
+<body>
 
-  <script src="js/app.js"></script>
+  <!-- INICIO -->
+  <div id="inicio" class="pantalla activa">
+    <button class="btn" onclick="mostrarMenu()">Menú</button>
+  </div>
+
+  <!-- MENU -->
+  <div id="menu" class="pantalla">
+    <button class="btn" onclick="irA('palabra.html')">Palabra del día</button>
+    <button class="btn" onclick="irA('novedades.html')">Novedades</button>
+    <button class="btn" onclick="irA('cronograma.html')">Cronograma</button>
+    <button class="btn" onclick="irA('juegos.html')">Juegos</button>
+  </div>
+
+  <script>
+    function mostrarMenu() {
+      document.getElementById("inicio").classList.remove("activa");
+      document.getElementById("menu").classList.add("activa");
+    }
+
+    function irA(pagina) {
+      window.location.href = pagina;
+    }
+
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js");
+    }
+  </script>
+
 </body>
 </html>
 
