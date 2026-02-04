@@ -1,31 +1,125 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Crucigrama Bíblico</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS GENERAL -->
+  <link rel="stylesheet" href="css/styles.css" />
 
-  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url("assets/fondo-claro.png") no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .contenedor {
+      background: rgba(255, 255, 255, 0.85);
+      margin: 20px;
+      padding: 15px;
+      border-radius: 12px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 0;
+    }
+
+    #grid {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      grid-template-rows: repeat(10, 1fr);
+      gap: 2px;
+      max-width: 320px;
+      margin: 0 auto 20px auto;
+    }
+
+    .celda {
+      width: 30px;
+      height: 30px;
+      border: 1px solid #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      background: #fff;
+    }
+
+    .bloque {
+      background: #444;
+    }
+
+    .pistas {
+      font-size: 14px;
+    }
+
+    .pista {
+      margin-bottom: 12px;
+    }
+
+    .pista input {
+      width: 120px;
+      padding: 4px;
+      margin-left: 5px;
+    }
+
+    .pista button {
+      margin-left: 5px;
+      padding: 4px 8px;
+    }
+  </style>
 </head>
-<body class="pantalla-clara">
 
-  <header class="top">
-    <h1>Crucigrama Bíblico</h1>
-    <p>Completá con palabras de la Biblia</p>
-  </header>
+<body>
 
-  <main>
-    <div id="crucigrama"></div>
+  <div class="contenedor">
+    <h1>🧩 Crucigrama Bíblico</h1>
 
-    <button class="btn-principal" onclick="verificarCrucigrama()">
-      Verificar respuestas
-    </button>
-  </main>
+    <!-- GRILLA -->
+    <div id="grid"></div>
 
+    <!-- PISTAS -->
+    <div class="pistas">
+
+      <div class="pista">
+        1. Hijo de Dios (5)
+        <input id="resp-1" />
+        <button onclick="validar(1)">Validar</button>
+      </div>
+
+      <div class="pista">
+        2. Lo que Dios es (4)
+        <input id="resp-2" />
+        <button onclick="validar(2)">Validar</button>
+      </div>
+
+      <div class="pista">
+        3. Símbolo de la salvación (4)
+        <input id="resp-3" />
+        <button onclick="validar(3)">Validar</button>
+      </div>
+
+      <div class="pista">
+        4. Regalo eterno de Dios (4)
+        <input id="resp-4" />
+        <button onclick="validar(4)">Validar</button>
+      </div>
+
+      <div class="pista">
+        5. Confianza en Dios (2)
+        <input id="resp-5" />
+        <button onclick="validar(5)">Validar</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JS DEL CRUCIGRAMA -->
   <script src="js/crucigramas.js"></script>
+
 </body>
 </html>
-
-
-
