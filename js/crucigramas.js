@@ -3,36 +3,51 @@
    👉 PODÉS MODIFICAR ESTO
 ================================ */
 
-const palabras = [
-  { palabra: "JESUS", pista: "Hijo de Dios" },
-  { palabra: "BIBLIA", pista: "Libro sagrado" },
-  { palabra: "AMOR", pista: "Lo que Dios es" }
-];
+document.addEventListener("DOMContentLoaded", () => {
 
-const contenedor = document.getElementById("crucigrama");
+  const palabras = [
+    { palabra: "JESUS", pista: "Hijo de Dios" },
+    { palabra: "BIBLIA", pista: "Libro sagrado" },
+    { palabra: "AMOR", pista: "Lo que Dios es" }
+  ];
 
-palabras.forEach((item, index) => {
-  const fila = document.createElement("div");
-  fila.className = "fila-crucigrama";
+  const contenedor = document.getElementById("crucigrama");
 
-  const pista = document.createElement("span");
-  pista.innerText = `${index + 1}. ${item.pista}`;
+  // Seguridad extra por si el div no existe
+  if (!contenedor) {
+    console.error("No se encontró el contenedor #crucigrama");
+    return;
+  }
 
-  const input = document.createElement("input");
-  input.type = "text";
-  input.dataset.respuesta = item.palabra;
+  palabras.forEach((item, index) => {
+    const fila = document.createElement("div");
+    fila.className = "fila-crucigrama";
 
-  fila.appendChild(pista);
-  fila.appendChild(input);
-  contenedor.appendChild(fila);
+    const pista = document.createElement("span");
+    pista.innerText = `${index + 1}. ${item.pista}`;
+
+    const input = document.createElement("input");
+    input.type = "text";
+    input.dataset.respuesta = item.palabra;
+    input.placeholder = "Escribí la respuesta";
+
+    fila.appendChild(pista);
+    fila.appendChild(input);
+    contenedor.appendChild(fila);
+  });
+
 });
+
+/* ===============================
+   VERIFICAR RESPUESTAS
+================================ */
 
 function verificarCrucigrama() {
   const inputs = document.querySelectorAll("#crucigrama input");
   let correctas = 0;
 
   inputs.forEach(input => {
-    if (input.value.toUpperCase() === input.dataset.respuesta) {
+    if (input.value.trim().toUpperCase() === input.dataset.respuesta) {
       input.style.borderColor = "green";
       correctas++;
     } else {
@@ -42,3 +57,4 @@ function verificarCrucigrama() {
 
   alert(`Respuestas correctas: ${correctas} de ${inputs.length}`);
 }
+
