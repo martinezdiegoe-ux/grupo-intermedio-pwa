@@ -3,6 +3,9 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* ===============================
+   PANTALLA OSCURA (MENÚS)
+================================ */
 .screen {
   height: 100vh;
   background: url("../assets/fondo-principal.png") center/cover no-repeat;
@@ -12,76 +15,34 @@ body {
   align-items: center;
 }
 
-.screen-light {
-  height: 100vh;
-  background: url("../assets/fondo-claro.png") center/cover no-repeat;
-  padding: 20px;
-  color: #222;
-}
-
+/* ===============================
+   BOTÓN ÚNICO GLOBAL
+================================ */
 .button {
   width: 80%;
   max-width: 320px;
   padding: 16px;
-  margin: 10px 0;
+  margin: 12px 0;
   font-size: 20px;
   border-radius: 18px;
   border: none;
-  background: rgba(255,255,255,0.25);
+  background: rgba(0, 0, 0, 0.75);
   color: white;
   backdrop-filter: blur(6px);
 }
 
+.button:active {
+  transform: scale(0.96);
+}
+
 /* ===============================
-   PANTALLA CLARA
+   PANTALLA CLARA (JUEGOS / QUIZ)
 ================================ */
 .pantalla-clara {
-  background: #f5f5f5;
+  background: url("../assets/fondo-claro.png") center/cover no-repeat;
   min-height: 100vh;
   padding: 20px;
   box-sizing: border-box;
+  color: #222;
 }
 
-.top {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-#crucigrama {
-  margin-bottom: 20px;
-}
-
-.fila-crucigrama {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 12px;
-}
-
-.fila-crucigrama span {
-  min-width: 160px;
-  font-weight: bold;
-}
-
-.fila-crucigrama input {
-  flex: 1;
-  padding: 8px;
-  font-size: 16px;
-}
-
-input.ok {
-  border: 2px solid green;
-}
-
-input.error {
-  border: 2px solid red;
-}
-
-.btn-principal {
-  width: 100%;
-  padding: 14px;
-  font-size: 18px;
-  background: #2d6cdf;
-  color: white;
-  border: none;
-  border-radius: 8px;
-}
