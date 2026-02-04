@@ -1,23 +1,140 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Crucigrama Bíblico</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f6f8;
+      color: #222;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    p {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #crucigrama {
+      display: grid;
+      grid-template-columns: repeat(5, 45px);
+      gap: 5px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .cell {
+      width: 45px;
+      height: 45px;
+      border: 1px solid #999;
+      text-align: center;
+      font-size: 20px;
+      text-transform: uppercase;
+      background: #fff;
+    }
+
+    .cell.disabled {
+      background: #333;
+      border: none;
+    }
+
+    button {
+      display: block;
+      margin: 0 auto;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: #1976d2;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:active {
+      transform: scale(0.97);
+    }
+
+    #resultado {
+      text-align: center;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
 </head>
+
 <body>
 
-<h1 style="color:red">ESTOY EN CRUCIGRAMAS.HTML</h1>
+  <h1>Crucigrama Bíblico</h1>
+  <p>Completá el crucigrama con palabras de la Biblia</p>
 
-<h2>Crucigrama Bíblico</h2>
-<p>Completa el crucigrama con palabras de la Biblia</p>
+  <div id="crucigrama"></div>
 
-<div id="crucigrama"></div>
+  <button onclick="verificar()">Verificar</button>
 
-<button onclick="verificarCrucigrama()">Verificar</button>
+  <div id="resultado"></div>
 
-<script src="js/crucigramas.js"></script>
+  <script>
+    // MATRIZ DEL CRUCIGRAMA
+    // # = celda bloqueada
+    const layout = [
+      ["J", "E", "S", "U", "S"],
+      ["#", "#", "A", "#", "#"],
+      ["A", "M", "O", "R", "#"],
+      ["#", "#", "Z", "#", "#"],
+      ["P", "A", "Z", "#", "#"]
+    ];
+
+    const crucigrama = document.getElementById("crucigrama");
+
+    // CREAR TABLERO
+    layout.forEach((fila, f) => {
+      fila.forEach((letra, c) => {
+        if (letra === "#") {
+          const div = document.createElement("div");
+          div.className = "cell disabled";
+          crucigrama.appendChild(div);
+        } else {
+          const input = document.createElement("input");
+          input.className = "cell";
+          input.maxLength = 1;
+          input.dataset.correcta = letra;
+          crucigrama.appendChild(input);
+        }
+      });
+    });
+
+    // VERIFICAR RESPUESTAS
+    function verificar() {
+      let correcto = true;
+      document.querySelectorAll(".cell").forEach(cell => {
+        if (cell.dataset.correcta) {
+          if (cell.value.toUpperCase() !== cell.dataset.correcta) {
+            cell.style.background = "#ffcccc";
+            correcto = false;
+          } else {
+            cell.style.background = "#ccffcc";
+          }
+        }
+      });
+
+      document.getElementById("resultado").textContent =
+        correcto ? "✅ ¡Muy bien! Crucigrama correcto" : "❌ Hay errores, revisá";
+    }
+  </script>
+
 </body>
 </html>
+
+
 
 
 
