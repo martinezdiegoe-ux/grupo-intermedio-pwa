@@ -2,58 +2,52 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Crucigrama Bíblico</title>
-  <link rel="stylesheet" href="css/crucigrama.css">
-</head>
-<body class="pantalla-clara">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 
-  <h1>🧩 Crucigrama Bíblico</h1>
+  <title>Grupo Intermedio</title>
 
-  <div class="contenedor">
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#1e1e1e" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-    <!-- GRILLA -->
-    <div id="grid" class="grid"></div>
+  <!-- ICONOS -->
+  <link rel="icon" href="assets/icon-192.png" />
+  <link rel="apple-touch-icon" href="assets/icon-192.png" />
 
-    <!-- PISTAS -->
-    <div class="pistas">
-      <h2>Pistas</h2>
+  <!-- ESTILOS -->
+  <link rel="stylesheet" href="css/styles.css" />
 
-      <div class="pista">
-        <strong>1.</strong> Nombre del Salvador (5) – Mateo 1:21  
-        <input id="resp-1" type="text">
-        <button onclick="validar(1)">Validar</button>
-      </div>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url("assets/inicio.png") no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+    }
 
-      <div class="pista">
-        <strong>2.</strong> Dios es… (4) – 1 Juan 4:8  
-        <input id="resp-2" type="text">
-        <button onclick="validar(2)">Validar</button>
-      </div>
+    .pantalla {
+      display: none;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
 
-      <div class="pista">
-        <strong>3.</strong> Donde murió Jesús (4) – Lucas 23  
-        <input id="resp-3" type="text">
-        <button onclick="validar(3)">Validar</button>
-      </div>
+    .pantalla.activa {
+      display: flex;
+    }
 
-      <div class="pista">
-        <strong>4.</strong> Jesús vino a darla en abundancia (4) – Juan 10:10  
-        <input id="resp-4" type="text">
-        <button onclick="validar(4)">Validar</button>
-      </div>
-
-      <div class="pista">
-        <strong>5.</strong> Sin ella es imposible agradar a Dios (2) – Hebreos 11:1  
-        <input id="resp-5" type="text">
-        <button onclick="validar(5)">Validar</button>
-      </div>
-
-    </div>
-  </div>
-
-  <script src="js/crucigramas.js"></script>
-</body>
-</html>
-
+    .btn {
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      border: none;
+      padding: 15px 25px;
+      margin: 10px;
+      font-size: 18px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 300px;
 
