@@ -25,9 +25,8 @@
     }
 
     body {
+      background: url("assets/fondo-principal.png") center/cover no-repeat fixed;
       font-family: Arial, sans-serif;
-      background: url("assets/fondo-principal.png") no-repeat center center fixed;
-      background-size: cover;
     }
 
     .pantalla {
@@ -42,22 +41,6 @@
     .pantalla.activa {
       display: flex;
     }
-
-    .btn {
-      background: rgba(0, 0, 0, 0.75);
-      color: white;
-      border: none;
-      padding: 16px 28px;
-      margin: 12px;
-      font-size: 18px;
-      border-radius: 14px;
-      width: 80%;
-      max-width: 320px;
-    }
-
-    .btn:active {
-      transform: scale(0.96);
-    }
   </style>
 </head>
 
@@ -65,15 +48,15 @@
 
   <!-- INICIO -->
   <div id="inicio" class="pantalla activa">
-    <button class="btn" onclick="mostrarMenu()">Menú</button>
+    <button class="button" onclick="mostrarMenu()">Menú</button>
   </div>
 
   <!-- MENÚ -->
   <div id="menu" class="pantalla">
-    <button class="btn" onclick="irA('palabra.html')">Palabra del día</button>
-    <button class="btn" onclick="irA('novedades.html')">Novedades</button>
-    <button class="btn" onclick="irA('cronograma.html')">Cronograma</button>
-    <button class="btn" onclick="irA('juegos.html')">Juegos</button>
+    <button class="button" onclick="irA('palabra.html')">Palabra del día</button>
+    <button class="button" onclick="irA('novedades.html')">Novedades</button>
+    <button class="button" onclick="irA('cronograma.html')">Cronograma</button>
+    <button class="button" onclick="irA('juegos.html')">Juegos</button>
   </div>
 
   <script>
@@ -93,3 +76,4 @@
 
 </body>
 </html>
+
