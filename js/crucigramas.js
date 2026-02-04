@@ -8,6 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const contenedor = document.getElementById("crucigrama");
 
+  if (!contenedor) {
+    console.error("No se encontró el contenedor #crucigrama");
+    return;
+  }
+
   contenedor.innerHTML = "";
 
   palabras.forEach((item, index) => {
@@ -43,4 +48,3 @@ function verificarCrucigrama() {
 
   alert(`Respuestas correctas: ${correctas} de ${inputs.length}`);
 }
-
