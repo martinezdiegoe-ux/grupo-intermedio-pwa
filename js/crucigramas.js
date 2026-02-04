@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
   const palabras = [
     { palabra: "JESUS", pista: "Hijo de Dios" },
     { palabra: "BIBLIA", pista: "Libro sagrado" },
@@ -7,12 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   const contenedor = document.getElementById("crucigrama");
-
-  if (!contenedor) {
-    console.error("No se encontró el contenedor #crucigrama");
-    return;
-  }
-
   contenedor.innerHTML = "";
 
   palabras.forEach((item, index) => {
@@ -39,12 +32,16 @@ function verificarCrucigrama() {
 
   inputs.forEach(input => {
     if (input.value.trim().toUpperCase() === input.dataset.respuesta) {
-      input.style.border = "2px solid green";
+      input.classList.add("ok");
+      input.classList.remove("error");
       correctas++;
     } else {
-      input.style.border = "2px solid red";
+      input.classList.add("error");
+      input.classList.remove("ok");
     }
   });
 
   alert(`Respuestas correctas: ${correctas} de ${inputs.length}`);
 }
+
+
