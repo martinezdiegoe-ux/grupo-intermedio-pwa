@@ -1,8 +1,3 @@
-/* ===============================
-   PALABRAS DEL CRUCIGRAMA
-   👉 PODÉS MODIFICAR ESTO
-================================ */
-
 document.addEventListener("DOMContentLoaded", () => {
 
   const palabras = [
@@ -13,34 +8,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const contenedor = document.getElementById("crucigrama");
 
-  // Seguridad extra por si el div no existe
-  if (!contenedor) {
-    console.error("No se encontró el contenedor #crucigrama");
-    return;
-  }
+  contenedor.innerHTML = "";
 
   palabras.forEach((item, index) => {
     const fila = document.createElement("div");
     fila.className = "fila-crucigrama";
 
     const pista = document.createElement("span");
-    pista.innerText = `${index + 1}. ${item.pista}`;
+    pista.textContent = `${index + 1}. ${item.pista}`;
 
     const input = document.createElement("input");
     input.type = "text";
+    input.placeholder = "Respuesta";
     input.dataset.respuesta = item.palabra;
-    input.placeholder = "Escribí la respuesta";
 
     fila.appendChild(pista);
     fila.appendChild(input);
     contenedor.appendChild(fila);
   });
-
 });
-
-/* ===============================
-   VERIFICAR RESPUESTAS
-================================ */
 
 function verificarCrucigrama() {
   const inputs = document.querySelectorAll("#crucigrama input");
@@ -48,10 +34,10 @@ function verificarCrucigrama() {
 
   inputs.forEach(input => {
     if (input.value.trim().toUpperCase() === input.dataset.respuesta) {
-      input.style.borderColor = "green";
+      input.style.border = "2px solid green";
       correctas++;
     } else {
-      input.style.borderColor = "red";
+      input.style.border = "2px solid red";
     }
   });
 
