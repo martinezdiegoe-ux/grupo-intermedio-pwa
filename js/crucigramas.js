@@ -1,47 +1,64 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const palabras = [
-    { palabra: "JESUS", pista: "Hijo de Dios" },
-    { palabra: "BIBLIA", pista: "Libro sagrado" },
-    { palabra: "AMOR", pista: "Lo que Dios es" }
-  ];
+const gridElement = document.getElementById("grid");
 
-  const contenedor = document.getElementById("crucigrama");
-  contenedor.innerHTML = "";
+// MATRIZ 10x10
+const grid = Array.from({ length: 10 }, () => Array(10).fill(null));
 
-  palabras.forEach((item, index) => {
-    const fila = document.createElement("div");
-    fila.className = "fila-crucigrama";
+// DEFINICIÓN DE PALABRAS
+const palabras = {
+  1: { texto: "JESUS", fila: 2, col: 2, dir: "H" },
+  2: { texto: "AMOR", fila: 0, col: 4, dir: "V" },
+  3: { texto: "CRUZ", fila: 2, col: 4, dir: "V" },
+  4: { texto: "VIDA", fila: 4, col: 2, dir: "H" },
+  5: { texto: "FE", fila: 6, col: 5, dir: "H" }
+};
 
-    const pista = document.createElement("span");
-    pista.textContent = `${index + 1}. ${item.pista}`;
+// RENDER GRILLA
+function renderGrid() {
+  gridElement.innerHTML = "";
 
-    const input = document.createElement("input");
-    input.type = "text";
-    input.placeholder = "Respuesta";
-    input.dataset.respuesta = item.palabra;
+  for (let r = 0; r < 10; r++) {
+    for (let c = 0; c < 10; c++) {
+      const cell = document.createElement("div");
+      cell.className = "celda";
 
-    fila.appendChild(pista);
-    fila.appendChild(input);
-    contenedor.appendChild(fila);
-  });
-});
+      if (grid[r][c] === "#") {
+        cell.classList.add("bloque");
+      } else if (grid[r][c]) {
+        cell.textContent = grid[r][c];
+      }
 
-function verificarCrucigrama() {
-  const inputs = document.querySelectorAll("#crucigrama input");
-  let correctas = 0;
-
-  inputs.forEach(input => {
-    if (input.value.trim().toUpperCase() === input.dataset.respuesta) {
-      input.classList.add("ok");
-      input.classList.remove("error");
-      correctas++;
-    } else {
-      input.classList.add("error");
-      input.classList.remove("ok");
+      gridElement.appendChild(cell);
     }
-  });
-
-  alert(`Respuestas correctas: ${correctas} de ${inputs.length}`);
+  }
 }
 
+// VALIDAR RESPUESTA
+function validar(num) {
+  const entrada = document.getElementById(`resp-${num}`).value
+    .toUpperCase()
+    .trim();
 
+  const palabra = palabras[num];
+
+  if (entrada === palabra.texto) {
+    colocarPalabra(palabra);
+    renderGrid();
+    alert("✅ Correcto");
+  } else {
+    alert("❌ Incorrecto");
+  }
+}
+
+// COLOCAR EN LA GRILLA
+function colocarPalabra(p) {
+  for (let i = 0; i < p.texto.length; i++) {
+    if (p.dir === "H") {
+      grid[p.fila][p.col + i] = p.texto[i];
+    } else {
+      grid[p.fila + i][p.col] = p.texto[i];
+    }
+  }
+}
+
+// INICIAL
+renderGrid();
