@@ -1,13 +1,31 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>PRUEBA ATÓMICA</title>
-  </head>
-  <body style="background:black;color:lime;font-size:40px;">
-    <p>SI VES ESTO, ESTE ES EL ARCHIVO REAL</p>
-    <p>Hora: <script>document.write(new Date())</script></p>
-  </body>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Crucigrama Bíblico</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="pantalla-clara">
+
+  <header class="top">
+    <h1>Crucigrama Bíblico</h1>
+    <p>Completá con palabras de la Biblia</p>
+  </header>
+
+  <main>
+    <div id="crucigrama"></div>
+
+    <button class="btn-principal" onclick="verificarCrucigrama()">
+      Verificar respuestas
+    </button>
+  </main>
+
+  <script src="js/crucigramas.js"></script>
+</body>
 </html>
+
 
 
