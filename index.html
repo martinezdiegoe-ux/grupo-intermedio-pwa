@@ -8,18 +8,18 @@
 
   <!-- PWA -->
   <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#1e1e1e" />
+  <meta name="theme-color" content="#000000" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
   <!-- ICONOS -->
-  <link rel="icon" href="assets/icon-192.png" />
-  <link rel="apple-touch-icon" href="assets/icon-192.png" />
+  <link rel="icon" href="/grupo-intermedio-pwa/assets/icon-192.png" />
+  <link rel="apple-touch-icon" href="/grupo-intermedio-pwa/assets/icon-192.png" />
 
   <!-- CSS GLOBAL -->
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="/grupo-intermedio-pwa/css/styles.css" />
 
-  <!-- CSS PROPIO DEL INDEX (PISA TODO) -->
+  <!-- CSS DEL INDEX (AISLADO Y SEGURO) -->
   <style>
     html, body {
       margin: 0;
@@ -29,13 +29,13 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: url("assets/inicio.png") no-repeat center center fixed;
+      background: url("/grupo-intermedio-pwa/assets/fondo-principal.png") no-repeat center center fixed;
       background-size: cover;
     }
 
-    /* 🔴 blindaje contra CSS roto */
+    /* Pantallas */
     .pantalla {
-      display: none !important;
+      display: none;
       height: 100vh;
       width: 100%;
       align-items: center;
@@ -44,17 +44,18 @@
     }
 
     .pantalla.activa {
-      display: flex !important;
+      display: flex;
     }
 
+    /* Botones */
     .btn {
       background: rgba(0, 0, 0, 0.75);
-      color: #fff;
+      color: #ffffff;
       border: none;
-      padding: 16px 26px;
+      padding: 16px 28px;
       margin: 12px;
       font-size: 18px;
-      border-radius: 12px;
+      border-radius: 14px;
       width: 80%;
       max-width: 320px;
     }
@@ -67,12 +68,12 @@
 
 <body>
 
-  <!-- INICIO -->
+  <!-- PANTALLA INICIO -->
   <div id="inicio" class="pantalla activa">
     <button class="btn" onclick="mostrarMenu()">Menú</button>
   </div>
 
-  <!-- MENU -->
+  <!-- PANTALLA MENÚ -->
   <div id="menu" class="pantalla">
     <button class="btn" onclick="irA('palabra.html')">Palabra del día</button>
     <button class="btn" onclick="irA('novedades.html')">Novedades</button>
@@ -80,6 +81,7 @@
     <button class="btn" onclick="irA('juegos.html')">Juegos</button>
   </div>
 
+  <!-- JS -->
   <script>
     function mostrarMenu() {
       document.getElementById("inicio").classList.remove("activa");
@@ -90,11 +92,13 @@
       window.location.href = pagina;
     }
 
+    // Registrar Service Worker
     if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("service-worker.js");
+      navigator.serviceWorker.register("/grupo-intermedio-pwa/service-worker.js");
     }
   </script>
 
 </body>
 </html>
+
 
