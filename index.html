@@ -1,15 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crucigrama Bíblico</title>
+  <link rel="stylesheet" href="css/crucigrama.css">
 </head>
-<body class="screen">
+<body class="pantalla-clara">
 
-  <button class="button" onclick="location.href='menu.html'">
-    Menu
-  </button>
+  <h1>🧩 Crucigrama Bíblico</h1>
 
-  <script src="js/app.js"></script>
+  <div class="contenedor">
+
+    <!-- GRILLA -->
+    <div id="grid" class="grid"></div>
+
+    <!-- PISTAS -->
+    <div class="pistas">
+      <h2>Pistas</h2>
+
+      <div class="pista">
+        <strong>1.</strong> Nombre del Salvador (5) – Mateo 1:21  
+        <input id="resp-1" type="text">
+        <button onclick="validar(1)">Validar</button>
+      </div>
+
+      <div class="pista">
+        <strong>2.</strong> Dios es… (4) – 1 Juan 4:8  
+        <input id="resp-2" type="text">
+        <button onclick="validar(2)">Validar</button>
+      </div>
+
+      <div class="pista">
+        <strong>3.</strong> Donde murió Jesús (4) – Lucas 23  
+        <input id="resp-3" type="text">
+        <button onclick="validar(3)">Validar</button>
+      </div>
+
+      <div class="pista">
+        <strong>4.</strong> Jesús vino a darla en abundancia (4) – Juan 10:10  
+        <input id="resp-4" type="text">
+        <button onclick="validar(4)">Validar</button>
+      </div>
+
+      <div class="pista">
+        <strong>5.</strong> Sin ella es imposible agradar a Dios (2) – Hebreos 11:1  
+        <input id="resp-5" type="text">
+        <button onclick="validar(5)">Validar</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/crucigrama.js"></script>
 </body>
 </html>
+
