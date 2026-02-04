@@ -2,124 +2,57 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Crucigrama Bíblico</title>
-
-  <!-- CSS GENERAL -->
-  <link rel="stylesheet" href="css/styles.css" />
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: url("assets/fondo-claro.png") no-repeat center center fixed;
-      background-size: cover;
-    }
-
-    .contenedor {
-      background: rgba(255, 255, 255, 0.85);
-      margin: 20px;
-      padding: 15px;
-      border-radius: 12px;
-    }
-
-    h1 {
-      text-align: center;
-      margin-top: 0;
-    }
-
-    #grid {
-      display: grid;
-      grid-template-columns: repeat(10, 1fr);
-      grid-template-rows: repeat(10, 1fr);
-      gap: 2px;
-      max-width: 320px;
-      margin: 0 auto 20px auto;
-    }
-
-    .celda {
-      width: 30px;
-      height: 30px;
-      border: 1px solid #333;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      background: #fff;
-    }
-
-    .bloque {
-      background: #444;
-    }
-
-    .pistas {
-      font-size: 14px;
-    }
-
-    .pista {
-      margin-bottom: 12px;
-    }
-
-    .pista input {
-      width: 120px;
-      padding: 4px;
-      margin-left: 5px;
-    }
-
-    .pista button {
-      margin-left: 5px;
-      padding: 4px 8px;
-    }
-  </style>
+  <link rel="stylesheet" href="css/crucigrama.css">
 </head>
+<body class="pantalla-clara">
 
-<body>
+  <h1>🧩 Crucigrama Bíblico</h1>
 
   <div class="contenedor">
-    <h1>🧩 Crucigrama Bíblico</h1>
 
     <!-- GRILLA -->
-    <div id="grid"></div>
+    <div id="grid" class="grid"></div>
 
     <!-- PISTAS -->
     <div class="pistas">
+      <h2>Pistas</h2>
 
       <div class="pista">
-        1. Hijo de Dios (5)
-        <input id="resp-1" />
+        <strong>1.</strong> Nombre del Salvador (5) – Mateo 1:21  
+        <input id="resp-1" type="text">
         <button onclick="validar(1)">Validar</button>
       </div>
 
       <div class="pista">
-        2. Lo que Dios es (4)
-        <input id="resp-2" />
+        <strong>2.</strong> Dios es… (4) – 1 Juan 4:8  
+        <input id="resp-2" type="text">
         <button onclick="validar(2)">Validar</button>
       </div>
 
       <div class="pista">
-        3. Símbolo de la salvación (4)
-        <input id="resp-3" />
+        <strong>3.</strong> Donde murió Jesús (4) – Lucas 23  
+        <input id="resp-3" type="text">
         <button onclick="validar(3)">Validar</button>
       </div>
 
       <div class="pista">
-        4. Regalo eterno de Dios (4)
-        <input id="resp-4" />
+        <strong>4.</strong> Jesús vino a darla en abundancia (4) – Juan 10:10  
+        <input id="resp-4" type="text">
         <button onclick="validar(4)">Validar</button>
       </div>
 
       <div class="pista">
-        5. Confianza en Dios (2)
-        <input id="resp-5" />
+        <strong>5.</strong> Sin ella es imposible agradar a Dios (2) – Hebreos 11:1  
+        <input id="resp-5" type="text">
         <button onclick="validar(5)">Validar</button>
       </div>
 
     </div>
   </div>
 
-  <!-- JS DEL CRUCIGRAMA -->
-  <script src="js/crucigramas.js"></script>
-
+  <script src="js/crucigrama.js"></script>
 </body>
 </html>
+
