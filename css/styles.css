@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.screen {
+  height: 100vh;
+  background: url("../assets/fondo-principal.png") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.screen-light {
+  height: 100vh;
+  background: url("../assets/fondo-claro.png") center/cover no-repeat;
+  padding: 20px;
+  color: #222;
+}
+
+.button {
+  width: 80%;
+  max-width: 320px;
+  padding: 16px;
+  margin: 10px 0;
+  font-size: 20px;
+  border-radius: 18px;
+  border: none;
+  background: rgba(255,255,255,0.25);
+  color: white;
+  backdrop-filter: blur(6px);
+}
