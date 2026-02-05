@@ -1,9 +1,9 @@
 const gridElement = document.getElementById("grid");
 
-// 10x10
+// grilla 10x10
 const grid = Array.from({ length: 10 }, () => Array(10).fill(""));
 
-// DEFINICIÓN EXACTA SEGÚN TU TABLA
+// PALABRAS SEGÚN TABLA (13)
 const palabras = {
   1: { texto: "NOE", fila: 1, col: 3, dir: "V" },
   2: { texto: "JOB", fila: 1, col: 6, dir: "H" },
@@ -16,16 +16,25 @@ const palabras = {
   9: { texto: "ARCA", fila: 7, col: 3, dir: "V" },
  10: { texto: "AMOR", fila: 7, col: 6, dir: "V" },
  11: { texto: "ORAR", fila: 7, col: 9, dir: "V" },
- 12: { texto: "PECADO", fila: 9, col: 1, dir: "H" }
+ 12: { texto: "PECADO", fila: 9, col: 1, dir: "H" },
+ 13: { texto: "JESUS", fila: 3, col: 2, dir: "V" }
 };
 
 function renderGrid() {
   gridElement.innerHTML = "";
+
   for (let r = 0; r < 10; r++) {
     for (let c = 0; c < 10; c++) {
       const cell = document.createElement("div");
-      cell.className = "celda";
-      cell.textContent = grid[r][c];
+      cell.classList.add("celda");
+
+      if (grid[r][c] === "") {
+        cell.classList.add("negra");
+      } else {
+        cell.classList.add("blanca");
+        cell.textContent = grid[r][c];
+      }
+
       gridElement.appendChild(cell);
     }
   }
@@ -34,10 +43,10 @@ function renderGrid() {
 function validar(num) {
   const input = document.getElementById(`resp-${num}`);
   const valor = input.value.toUpperCase().trim();
-  const p = palabras[num];
+  const palabra = palabras[num];
 
-  if (valor === p.texto) {
-    colocarPalabra(p);
+  if (valor === palabra.texto) {
+    colocarPalabra(palabra);
     input.disabled = true;
     renderGrid();
     alert("✅ Correcto");
@@ -58,3 +67,4 @@ function colocarPalabra(p) {
 }
 
 renderGrid();
+
