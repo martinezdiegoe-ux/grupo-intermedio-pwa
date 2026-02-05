@@ -1,16 +1,17 @@
 body {
   margin: 0;
-  padding: 20px;
   font-family: Arial, sans-serif;
-  text-align: center;
 }
 
 .pantalla-clara {
+  background: url("../assets/fondo-claro.png") center/cover no-repeat;
   min-height: 100vh;
-  background: url("../assets/fondo-claro.png") center / cover no-repeat;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 h1 {
+  text-align: center;
   margin-bottom: 20px;
 }
 
@@ -21,7 +22,7 @@ h1 {
   flex-wrap: wrap;
 }
 
-/* ===== GRILLA ===== */
+/* GRILLA */
 .grid {
   display: grid;
   grid-template-columns: repeat(10, 36px);
@@ -32,7 +33,6 @@ h1 {
 .celda {
   width: 36px;
   height: 36px;
-  border: 1px solid #888;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,21 +40,18 @@ h1 {
   font-size: 18px;
 }
 
-.blanca {
-  background: #fff;
-}
-
-.negra {
+.celda.negra {
   background: #222;
 }
 
-/* ===== PISTAS ===== */
+.celda.blanca {
+  background: white;
+  border: 1px solid #aaa;
+}
+
+/* PISTAS */
 .pistas {
-  max-width: 340px;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 15px;
-  border-radius: 10px;
-  text-align: left;
+  max-width: 320px;
 }
 
 .pista {
@@ -63,13 +60,14 @@ h1 {
 
 .pista input {
   width: 100%;
-  margin-top: 5px;
   padding: 6px;
+  margin-top: 4px;
   font-size: 16px;
 }
 
 .pista button {
-  margin-top: 5px;
-  padding: 6px 12px;
+  margin-top: 6px;
+  padding: 6px 10px;
   cursor: pointer;
 }
+
