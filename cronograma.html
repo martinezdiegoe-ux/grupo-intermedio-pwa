@@ -1,17 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crucigrama Bíblico</title>
+  <link rel="stylesheet" href="css/crucigrama.css">
 </head>
-<body class="screen-light">
 
-  <h2>Cronograma</h2>
+<body class="pantalla-clara">
 
-  <!-- REEMPLAZAR -->
-  <ul>
-    <li>Viernes – 20 hs</li>
-    <li>Domingo – 10 hs</li>
-  </ul>
+<h1>🧩 Crucigrama Bíblico</h1>
 
+<div class="contenedor">
+
+  <div id="grid" class="grid"></div>
+
+  <div class="pistas">
+    <h2>Pistas</h2>
+
+    <div class="pista">
+      <strong>1.</strong> Nombre del Salvador (5)
+      <input id="resp-1">
+      <button onclick="validar(1)">Validar</button>
+    </div>
+
+    <div class="pista">
+      <strong>2.</strong> Dios es… (4)
+      <input id="resp-2">
+      <button onclick="validar(2)">Validar</button>
+    </div>
+
+    <div class="pista">
+      <strong>3.</strong> Patriarca del arca (3)
+      <input id="resp-3">
+      <button onclick="validar(3)">Validar</button>
+    </div>
+
+    <div class="pista">
+      <strong>4.</strong> Hebreos 11:1 (2)
+      <input id="resp-4">
+      <button onclick="validar(4)">Validar</button>
+    </div>
+
+    <div class="pista">
+      <strong>5.</strong> Acción de comunicarse con Dios (7)
+      <input id="resp-5">
+      <button onclick="validar(5)">Validar</button>
+    </div>
+
+  </div>
+</div>
+
+<script src="js/crucigrama.js"></script>
 </body>
 </html>
