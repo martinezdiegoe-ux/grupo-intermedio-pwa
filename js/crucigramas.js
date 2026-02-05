@@ -21,7 +21,7 @@ const palabras = {
   13: { texto: "JESUS",      fila: 3, col: 2, dir: "V" }
 };
 
-// MARCAR CELDAS VALIDAS
+// MARCAR CELDAS VALIDAS (ESTRUCTURA FIJA)
 function marcarCeldasValidas() {
   Object.values(palabras).forEach(p => {
     let r = p.fila - 1;
@@ -47,7 +47,7 @@ function colocarPalabra(p) {
   }
 }
 
-// VALIDAR
+// VALIDAR RESPUESTA
 function validar(num) {
   const input = document.getElementById(`resp-${num}`);
   const valor = input.value.toUpperCase().trim();
@@ -63,7 +63,7 @@ function validar(num) {
   }
 }
 
-// RENDER
+// RENDER (NO CAMBIA COLORES, SOLO LETRAS)
 function renderGrid() {
   gridElement.innerHTML = "";
 
@@ -76,7 +76,9 @@ function renderGrid() {
         cell.classList.add("negra");
       } else {
         cell.classList.add("blanca");
-        if (grid[r][c]) cell.textContent = grid[r][c];
+        if (grid[r][c]) {
+          cell.textContent = grid[r][c];
+        }
       }
 
       gridElement.appendChild(cell);
