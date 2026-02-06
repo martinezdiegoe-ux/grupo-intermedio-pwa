@@ -5,58 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Verdadero o Falso – Biblia</title>
 
-  <!-- CSS PROPIO -->
+  <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/verdadero-falso.css">
 </head>
 
 <body>
 
   <div class="vf-container">
-
     <h1>Verdadero o Falso – Biblia</h1>
 
-    <form id="vf-form">
+    <div id="preguntas"></div>
 
-      <div class="vf-item" data-correct="V">
-        <span>1. Moisés guió al pueblo de Israel fuera de Egipto.</span>
-        <label><input type="radio" name="q1" value="V"> V</label>
-        <label><input type="radio" name="q1" value="F"> F</label>
-      </div>
+    <button class="button" onclick="validar()">Validar</button>
 
-      <div class="vf-item" data-correct="F">
-        <span>2. David fue rey antes que Saúl.</span>
-        <label><input type="radio" name="q2" value="V"> V</label>
-        <label><input type="radio" name="q2" value="F"> F</label>
-      </div>
+    <div id="resultado" class="resultado"></div>
+  </div>
 
-      <div class="vf-item" data-correct="V">
-        <span>3. Jesús nació en Belén.</span>
-        <label><input type="radio" name="q3" value="V"> V</label>
-        <label><input type="radio" name="q3" value="F"> F</label>
-      </div>
-
-      <div class="vf-item" data-correct="F">
-        <span>4. Pedro negó a Jesús cinco veces.</span>
-        <label><input type="radio" name="q4" value="V"> V</label>
-        <label><input type="radio" name="q4" value="F"> F</label>
-      </div>
-
-      <div class="vf-item" data-correct="V">
-        <span>5. Noé construyó el arca.</span>
-        <label><input type="radio" name="q5" value="V"> V</label>
-        <label><input type="radio" name="q5" value="F"> F</label>
-      </div>
-
-      <div class="vf-item" data-correct="F">
-        <span>6. Sansón fue derrotado por Goliat.</span>
-        <label><input type="radio" name="q6" value="V"> V</label>
-        <label><input type="radio" name="q6" value="F"> F</label>
-      </div>
-
-      <div class="vf-item" data-correct="V">
-        <span>7. Pablo escribió varias cartas del Nuevo Testamento.</span>
-        <label><input type="radio" name="q7" value="V"> V</label>
-        <label><input type="radio" name="q7" value="F"> F</label>
-      </div>
-
-      <div
+  <script src="js/verdadero-falso.js"></script>
+</body>
+</html>
