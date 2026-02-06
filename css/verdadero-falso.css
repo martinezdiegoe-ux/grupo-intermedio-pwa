@@ -1,50 +1,53 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: url("../assets/fondo-principal.png") center/cover no-repeat fixed;
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("../assets/fondo-principal.png") center/cover no-repeat fixed;
+  color: #000;
 }
 
 .vf-container {
   max-width: 900px;
   margin: auto;
   padding: 20px;
-  background: rgba(255,255,255,0.85);
-  min-height: 100vh;
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 20px;
+  color: #000;
+  margin-bottom: 25px;
 }
 
-.vf-item {
-  padding: 12px;
-  margin-bottom: 10px;
-  border-radius: 6px;
-  background: #f0f0f0;
+.pregunta {
+  background: rgba(255,255,255,0.85);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
 }
 
-.vf-item label {
-  margin-left: 10px;
+.opciones {
+  margin-top: 10px;
 }
 
-.correcto {
-  background: #c8f7c5 !important;
+.opciones label {
+  margin-right: 20px;
+  font-weight: bold;
 }
 
-.incorrecto {
-  background: #f7c5c5 !important;
+.correcta {
+  background: rgba(0, 180, 0, 0.4);
 }
 
-button {
-  display: block;
-  margin: 20px auto;
-  padding: 12px 25px;
-  font-size: 16px;
-  cursor: pointer;
+.incorrecta {
+  background: rgba(200, 0, 0, 0.4);
 }
 
-#resultado {
+.resultado {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.9);
   text-align: center;
   font-size: 18px;
   font-weight: bold;
