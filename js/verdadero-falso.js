@@ -45,6 +45,10 @@ function validar() {
     mensaje = "🏆 ¡Excelente! Conocés muy bien la verdad bíblica.";
   }
 
-  document.getElementById("resultado").innerHTML =
+  const resultado = document.getElementById("resultado");
+  resultado.innerHTML =
     `<strong>Resultado:</strong> ${aciertos} / ${total}<br>${mensaje}`;
+
+  /* 🔽 ESTO ES LO NUEVO (CLAVE PARA MOBILE) */
+  resultado.scrollIntoView({ behavior: "smooth" });
 }
