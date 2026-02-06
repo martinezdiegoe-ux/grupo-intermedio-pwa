@@ -52,3 +52,12 @@ function validar() {
   /* 🔽 ESTO ES LO NUEVO (CLAVE PARA MOBILE) */
   resultado.scrollIntoView({ behavior: "smooth" });
 }
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.getElementById("btnValidar");
+  if (btn) {
+    btn.addEventListener("click", function () {
+      validar();
+    });
+  }
+});
+
