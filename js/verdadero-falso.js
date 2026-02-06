@@ -13,25 +13,38 @@ const respuestasCorrectas = {
 
 function validar() {
   let aciertos = 0;
-  let total = Object.keys(respuestasCorrectas).length;
+  const total = Object.keys(respuestasCorrectas).length;
 
   for (let key in respuestasCorrectas) {
-    const seleccion = document.querySelector(`input[name="${key}"]:checked`);
-    if (seleccion && seleccion.value === respuestasCorrectas[key]) {
+    const pregunta = document.querySelector(`input[name="${key}"]:checked`);
+    const bloque = document.querySelector(`input[name="${key}"]`)?.closest(".pregunta");
+
+    if (!bloque) continue;
+
+    if (pregunta && pregunta.value === respuestasCorrectas[key]) {
       aciertos++;
+      bloque.classList.add("ok");
+      bloque.classList.remove("error");
+    } else {
+      bloque.classList.add("error");
+      bloque.classList.remove("ok");
     }
   }
 
-  const resultado = document.getElementById("resultado");
   let mensaje = "";
 
-  if (aciertos === total) {
-    mensaje = "🔥 ¡Impresionante! Estás firme en la verdad de la Palabra.";
-  } else if (aciertos >= total * 0.7) {
-    mensaje = "💪 Muy bien. Seguís creciendo en el conocimiento de Dios.";
+  if (aciertos <= 3) {
+    mensaje = "📖 Seguí estudiando la Palabra, Dios siempre tiene más para enseñarte.";
+  } else if (aciertos <= 6) {
+    mensaje = "🙂 Buen comienzo, pero todavía hay espacio para crecer.";
+  } else if (aciertos <= 8) {
+    mensaje = "💪 Muy bien, estás firme en el conocimiento bíblico.";
+  } else if (aciertos === 9) {
+    mensaje = "🔥 ¡Sobresaliente! Gran manejo de la Palabra.";
   } else {
-    mensaje = "📖 Seguí buscando en la Palabra, Dios siempre enseña.";
+    mensaje = "🏆 ¡Excelente! Conocés muy bien la verdad bíblica.";
   }
 
-  resultado.innerHTML = `Aciertos: ${aciertos} / ${total}<br>${mensaje}`;
+  document.getElementById("resultado").innerHTML =
+    `<strong>Resultado:</strong> ${aciertos} / ${total}<br>${mensaje}`;
 }
