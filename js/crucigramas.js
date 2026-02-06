@@ -3,6 +3,7 @@ const gridElement = document.getElementById("grid");
 // MATRICES
 const grid = Array.from({ length: 10 }, () => Array(10).fill(""));
 const celdasValidas = Array.from({ length: 10 }, () => Array(10).fill(false));
+const numerosInicio = {};
 
 // PALABRAS (SEGÚN PDF)
 const palabras = {
@@ -21,11 +22,13 @@ const palabras = {
   13: { texto: "JESUS",      fila: 3, col: 2, dir: "V" }
 };
 
-// MARCAR CELDAS VALIDAS (ESTRUCTURA FIJA)
+// MARCAR CELDAS VALIDAS + NUMEROS
 function marcarCeldasValidas() {
-  Object.values(palabras).forEach(p => {
+  Object.entries(palabras).forEach(([num, p]) => {
     let r = p.fila - 1;
     let c = p.col - 1;
+
+    numerosInicio[`${r}-${c}`] = num;
 
     for (let i = 0; i < p.texto.length; i++) {
       celdasValidas[r][c] = true;
@@ -47,7 +50,7 @@ function colocarPalabra(p) {
   }
 }
 
-// VALIDAR RESPUESTA
+// VALIDAR
 function validar(num) {
   const input = document.getElementById(`resp-${num}`);
   const valor = input.value.toUpperCase().trim();
@@ -63,7 +66,7 @@ function validar(num) {
   }
 }
 
-// RENDER (NO CAMBIA COLORES, SOLO LETRAS)
+// RENDER
 function renderGrid() {
   gridElement.innerHTML = "";
 
@@ -76,8 +79,17 @@ function renderGrid() {
         cell.classList.add("negra");
       } else {
         cell.classList.add("blanca");
+
+        const key = `${r}-${c}`;
+        if (numerosInicio[key]) {
+          const num = document.createElement("span");
+          num.className = "numero";
+          num.textContent = numerosInicio[key];
+          cell.appendChild(num);
+        }
+
         if (grid[r][c]) {
-          cell.textContent = grid[r][c];
+          cell.appendChild(document.createTextNode(grid[r][c]));
         }
       }
 
