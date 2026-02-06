@@ -1,87 +1,51 @@
 body {
-  font-family: Arial, sans-serif;
-  background: url("../assets/fondo-claro.png") center/cover no-repeat fixed;
   margin: 0;
+  font-family: Arial, sans-serif;
+  background: url("../assets/fondo-principal.png") center/cover no-repeat fixed;
+}
+
+.vf-container {
+  max-width: 900px;
+  margin: auto;
   padding: 20px;
-  text-align: center;
+  background: rgba(255,255,255,0.85);
+  min-height: 100vh;
 }
 
 h1 {
-  margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.contenedor {
-  max-width: 800px;
-  margin: auto;
-}
-
-.lista {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.afirmacion {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.vf-item {
   padding: 12px;
+  margin-bottom: 10px;
   border-radius: 6px;
-  background: #fff;
-  border: 1px solid #ccc;
+  background: #f0f0f0;
 }
 
-.texto {
-  flex: 1;
-  text-align: left;
+.vf-item label {
+  margin-left: 10px;
+}
+
+.correcto {
+  background: #c8f7c5 !important;
+}
+
+.incorrecto {
+  background: #f7c5c5 !important;
+}
+
+button {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 25px;
   font-size: 16px;
+  cursor: pointer;
 }
 
-.opciones {
-  display: flex;
-  gap: 10px;
-}
-
-.opcion {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  font-weight: bold;
+#resultado {
+  text-align: center;
   font-size: 18px;
-  border: 2px solid #333;
-  cursor: pointer;
-}
-
-.opcion.v {
-  background: #cdeccd;
-}
-
-.opcion.f {
-  background: #f3c2c2;
-}
-
-.opcion.seleccionada {
-  outline: 3px solid #000;
-}
-
-.correcta {
-  background-color: #c7f0c7 !important;
-}
-
-.incorrecta {
-  background-color: #f5b5b5 !important;
-}
-
-#validarBtn {
-  margin-top: 25px;
-  padding: 12px 30px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.resultado {
-  margin-top: 25px;
-  font-size: 20px;
   font-weight: bold;
 }
-
