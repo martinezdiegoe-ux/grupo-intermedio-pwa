@@ -17,7 +17,9 @@ function validar() {
 
   for (let key in respuestasCorrectas) {
     const pregunta = document.querySelector(`input[name="${key}"]:checked`);
-    const bloque = document.querySelector(`input[name="${key}"]`)?.closest(".pregunta");
+    const bloque = document
+      .querySelector(`input[name="${key}"]`)
+      ?.closest(".pregunta");
 
     if (!bloque) continue;
 
@@ -46,18 +48,23 @@ function validar() {
   }
 
   const resultado = document.getElementById("resultado");
+
   resultado.innerHTML =
     `<strong>Resultado:</strong> ${aciertos} / ${total}<br>${mensaje}`;
 
-  /* 🔽 ESTO ES LO NUEVO (CLAVE PARA MOBILE) */
+  /* 🔧 FIX DEFINITIVO PARA CHROME ANDROID */
+  resultado.style.display = "none";
+  resultado.offsetHeight; // fuerza reflow
+  resultado.style.display = "block";
+
+  /* scroll suave al resultado */
   resultado.scrollIntoView({ behavior: "smooth" });
 }
+
+/* compatibilidad total */
 document.addEventListener("DOMContentLoaded", function () {
-  const btn = document.getElementById("btnValidar");
+  const btn = document.querySelector(".btn-validar");
   if (btn) {
-    btn.addEventListener("click", function () {
-      validar();
-    });
+    btn.addEventListener("click", validar);
   }
 });
-
