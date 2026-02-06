@@ -5,22 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Verdadero o Falso - Biblia</title>
 
-  <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/verdadero-falso.css">
 </head>
 
-<body class="vf-screen">
+<body>
 
-  <h1>Verdadero o Falso – Biblia</h1>
+  <h1>📖 Verdadero o Falso – Biblia</h1>
 
-  <div id="preguntas"></div>
+  <div class="contenedor">
 
-  <button class="button" onclick="validar()">Validar</button>
+    <form id="quiz">
 
-  <div id="resultado"></div>
+      <div class="pregunta">
+        <p>1. Moisés guió al pueblo de Israel fuera de Egipto.</p>
+        <label><input type="radio" name="q1" value="V"> V</label>
+        <label><input type="radio" name="q1" value="F"> F</label>
+      </div>
 
-  <!-- JS SIEMPRE AL FINAL -->
-  <script src="js/verdadero-falso.js"></script>
+      <div class="pregunta">
+        <p>2. David fue rey antes que Saúl.</p>
+        <label><input type="radio" name="q2" value="V"> V</label>
+        <label><input type="radio" name="q2" value="F"> F</label>
+      </div>
 
-</body>
-</html>
+      <div class="pregunta">
+        <p>3. Jesús nació en Belén.</p>
+        <label><input type="radio" name="q3" value="V"> V</label>
+        <label><input type="radio" name="q3" value="F"> F</label>
+      </div>
+
+      <div class="pregunta">
+        <p>4. Pedro negó a Jesús cinco veces.</p>
+        <label><input type="radio" name="q4" value="V"> V</label>
+        <label><input type="radio" name="q4" value="F"> F</label>
+      </div>
+
+      <div class="pregunta">
+        <p>5. Noé construyó el arca.</p>
+        <label><input type="radio" name="q5" value="V"> V</label>
+        <label><input type="radio" name="q5" value="F"> F</label>
+      </div>
+
+      <div class="pregunta">
+        <p>6. Sansón fue derrotado por Goliat.</p>
+        <label><input type="radio" name="q6" value="V"> V</label>
+        <label><input type="radio" name="q6" value="F"> F</label>
+      </div>
+
+      <div class="pregunta">
+        <p>7. Pablo escribió varias cartas del Nuevo Testamento.</p>
+        <label><input type="radio"
