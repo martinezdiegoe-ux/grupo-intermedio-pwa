@@ -57,3 +57,28 @@ h1 {
     bottom: 20px;
   }
 }
+
+@media (max-width: 768px) {
+
+  body {
+    background-attachment: scroll !important;
+    height: auto !important;
+    min-height: 100% !important;
+  }
+
+  .vf-contenedor {
+    min-height: auto !important;
+    height: auto !important;
+    padding-bottom: 140px !important;
+  }
+
+  .vf-pregunta {
+    margin-bottom: 20px !important;
+  }
+
+  button {
+    position: sticky !important;
+    bottom: 20px !important;
+  }
+}
+
