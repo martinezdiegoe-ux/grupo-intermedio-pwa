@@ -16,14 +16,14 @@ function validar() {
   const total = Object.keys(respuestasCorrectas).length;
 
   for (let key in respuestasCorrectas) {
-    const pregunta = document.querySelector(`input[name="${key}"]:checked`);
+    const seleccion = document.querySelector(`input[name="${key}"]:checked`);
     const bloque = document
       .querySelector(`input[name="${key}"]`)
       ?.closest(".pregunta");
 
     if (!bloque) continue;
 
-    if (pregunta && pregunta.value === respuestasCorrectas[key]) {
+    if (seleccion && seleccion.value === respuestasCorrectas[key]) {
       aciertos++;
       bloque.classList.add("ok");
       bloque.classList.remove("error");
@@ -47,24 +47,15 @@ function validar() {
     mensaje = "🏆 ¡Excelente! Conocés muy bien la verdad bíblica.";
   }
 
-  const resultado = document.getElementById("resultado");
+  const texto = document.getElementById("texto-resultado");
 
-  resultado.innerHTML =
-    `<strong>Resultado:</strong> ${aciertos} / ${total}<br>${mensaje}`;
+  texto.innerHTML = `
+    <p><strong>Resultado:</strong> ${aciertos} / ${total}</p>
+    <p>${mensaje}</p>
+  `;
 
-  /* 🔧 FIX DEFINITIVO PARA CHROME ANDROID */
-  resultado.style.display = "none";
-  resultado.offsetHeight; // fuerza reflow
-  resultado.style.display = "block";
-
-  /* scroll suave al resultado */
-  resultado.scrollIntoView({ behavior: "smooth" });
+  // 🔒 Scroll seguro (no falla en Chrome)
+  document.getElementById("resultado")
+    .scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-/* compatibilidad total */
-document.addEventListener("DOMContentLoaded", function () {
-  const btn = document.querySelector(".btn-validar");
-  if (btn) {
-    btn.addEventListener("click", validar);
-  }
-});
