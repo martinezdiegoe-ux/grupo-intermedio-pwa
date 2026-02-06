@@ -38,29 +38,6 @@ h1 {
 
 /* ===== FIX MOBILE ===== */
 @media (max-width: 768px) {
-
-  body {
-    background-attachment: scroll;
-  }
-
-  .vf-contenedor {
-    min-height: auto;
-    padding-bottom: 120px;
-  }
-
-  h1 {
-    margin-top: 20px;
-  }
-
-  .button {
-    position: sticky;
-    bottom: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-
-  body {
     background-attachment: scroll !important;
     height: auto !important;
     min-height: 100% !important;
