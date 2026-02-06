@@ -1,58 +1,37 @@
-const preguntas = [
-  {
-    texto: "Jesús nació en Belén.",
-    correcta: true
-  },
-  {
-    texto: "Moisés cruzó el mar en un barco.",
-    correcta: false
-  },
-  {
-    texto: "David venció a Goliat con una honda.",
-    correcta: true
-  },
-  {
-    texto: "La Biblia tiene solo un libro.",
-    correcta: false
-  }
-];
-
-const contenedor = document.getElementById("preguntas");
-
-preguntas.forEach((p, i) => {
-  const div = document.createElement("div");
-  div.className = "pregunta";
-
-  div.innerHTML = `
-    <p>${p.texto}</p>
-    <div class="opciones">
-      <label>
-        <input type="radio" name="pregunta${i}" value="true">
-        Verdadero
-      </label>
-      <label>
-        <input type="radio" name="pregunta${i}" value="false">
-        Falso
-      </label>
-    </div>
-  `;
-
-  contenedor.appendChild(div);
-});
+const respuestasCorrectas = {
+  q1: "V",
+  q2: "F",
+  q3: "V",
+  q4: "F",
+  q5: "V",
+  q6: "F",
+  q7: "V",
+  q8: "F",
+  q9: "V",
+  q10: "V"
+};
 
 function validar() {
-  let correctas = 0;
+  let aciertos = 0;
+  let total = Object.keys(respuestasCorrectas).length;
 
-  preguntas.forEach((p, i) => {
-    const respuesta = document.querySelector(
-      `input[name="pregunta${i}"]:checked`
-    );
-
-    if (respuesta && respuesta.value === String(p.correcta)) {
-      correctas++;
+  for (let key in respuestasCorrectas) {
+    const seleccion = document.querySelector(`input[name="${key}"]:checked`);
+    if (seleccion && seleccion.value === respuestasCorrectas[key]) {
+      aciertos++;
     }
-  });
+  }
 
-  document.getElementById("resultado").innerText =
-    `Respuestas correctas: ${correctas} de ${preguntas.length}`;
+  const resultado = document.getElementById("resultado");
+  let mensaje = "";
+
+  if (aciertos === total) {
+    mensaje = "🔥 ¡Impresionante! Estás firme en la verdad de la Palabra.";
+  } else if (aciertos >= total * 0.7) {
+    mensaje = "💪 Muy bien. Seguís creciendo en el conocimiento de Dios.";
+  } else {
+    mensaje = "📖 Seguí buscando en la Palabra, Dios siempre enseña.";
+  }
+
+  resultado.innerHTML = `Aciertos: ${aciertos} / ${total}<br>${mensaje}`;
 }
