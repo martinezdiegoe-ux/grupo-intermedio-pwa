@@ -1,53 +1,58 @@
-/* ===============================
-   PREGUNTAS OPCIÓN MÚLTIPLE
-   👉 EDITAR ACA
-================================ */
+const respuestasCorrectas = {
+  q1: "C",
+  q2: "C",
+  q3: "C",
+  q4: "C",
+  q5: "C",
+  q6: "B",
+  q7: "C",
+  q8: "C",
+  q9: "B",
+  q10: "C"
+};
 
-const preguntasOM = [
-  {
-    pregunta: "¿Quién construyó el arca?",
-    opciones: ["Abraham", "Noé", "Moisés"],
-    correcta: 1
-  },
-  {
-    pregunta: "¿Cuántos días creó Dios el mundo?",
-    opciones: ["5", "6", "7"],
-    correcta: 1
+function validar() {
+  let aciertos = 0;
+  const total = Object.keys(respuestasCorrectas).length;
+
+  for (let key in respuestasCorrectas) {
+    const seleccion = document.querySelector(`input[name="${key}"]:checked`);
+    const bloque = document
+      .querySelector(`input[name="${key}"]`)
+      ?.closest(".pregunta");
+
+    if (!bloque) continue;
+
+    if (seleccion && seleccion.value === respuestasCorrectas[key]) {
+      aciertos++;
+      bloque.classList.add("ok");
+      bloque.classList.remove("error");
+    } else {
+      bloque.classList.add("error");
+      bloque.classList.remove("ok");
+    }
   }
-];
 
-const contenedorOM = document.getElementById("om-container");
+  let mensaje = "";
 
-preguntasOM.forEach((item, index) => {
-  const bloque = document.createElement("div");
+  if (aciertos <= 3) {
+    mensaje = "📖 Seguí estudiando la Palabra, Dios siempre tiene más para enseñarte.";
+  } else if (aciertos <= 6) {
+    mensaje = "🙂 Buen comienzo, pero todavía hay espacio para crecer.";
+  } else if (aciertos <= 8) {
+    mensaje = "💪 Muy bien, estás firme en el conocimiento bíblico.";
+  } else if (aciertos === 9) {
+    mensaje = "🔥 ¡Sobresaliente! Gran manejo de la Palabra.";
+  } else {
+    mensaje = "🏆 ¡Excelente! Conocés muy bien la verdad bíblica.";
+  }
 
-  let opcionesHTML = "";
-  item.opciones.forEach((op, i) => {
-    opcionesHTML += `
-      <label>
-        <input type="radio" name="q${index}" value="${i}">
-        ${op}
-      </label><br>
-    `;
-  });
-
-  bloque.innerHTML = `
-    <p>${index + 1}. ${item.pregunta}</p>
-    ${opcionesHTML}
+  document.getElementById("texto-resultado").innerHTML = `
+    <p><strong>Resultado:</strong> ${aciertos} / ${total}</p>
+    <p>${mensaje}</p>
   `;
 
-  contenedorOM.appendChild(bloque);
-});
-
-function verificarOM() {
-  let correctas = 0;
-
-  preguntasOM.forEach((item, index) => {
-    const seleccion = document.querySelector(`input[name="q${index}"]:checked`);
-    if (seleccion && parseInt(seleccion.value) === item.correcta) {
-      correctas++;
-    }
-  });
-
-  alert(`Correctas: ${correctas} de ${preguntasOM.length}`);
+  document
+    .getElementById("resultado")
+    .scrollIntoView({ behavior: "smooth", block: "start" });
 }
