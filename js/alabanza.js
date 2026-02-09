@@ -63,7 +63,7 @@ Y hoy puedo seguir.
     `,
     pdf: "pdf/Necesito-de-Ti.pdf",
     youtube: "https://youtu.be/t2x339dtz9w?si=UXRzz9src89a8D7D"
-  }
+  },
 
   alabanza3: {
     titulo: "Un Milagro",
