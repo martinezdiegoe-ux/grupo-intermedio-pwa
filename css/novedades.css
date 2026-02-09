@@ -1,22 +1,52 @@
-body {
+/* Reset básico */
+* {
+  box-sizing: border-box;
   margin: 0;
-  padding: 20px;
-  min-height: 100vh;
-  background: url("../assets/fondo-principal.png") center/cover no-repeat fixed;
+  padding: 0;
+}
+
+/* Fondo principal */
+body {
   font-family: Arial, sans-serif;
+  min-height: 100vh;
+  background: url("../assets/fondo-principal.png") center / cover no-repeat fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
-h1 {
-  color: white;
-  margin-bottom: 30px;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+/* Contenedor general */
+.contenedor {
+  width: 100%;
+  max-width: 720px;
+  padding: 20px;
 }
 
-.contenedor {
+/* Contenedor de botones (igual al menú) */
+.menu-botones {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  max-width: 320px;
-  margin: auto;
+  align-items: center;
+  gap: 22px;
 }
+
+/* Botones */
+.btn-menu {
+  width: 85%;
+  max-width: 420px;
+  padding: 18px 20px;
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+/* Efecto toque / hover */
+.btn-menu:hover,
+.btn-menu:active {
+  backg
