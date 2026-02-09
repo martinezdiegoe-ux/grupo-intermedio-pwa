@@ -9,7 +9,7 @@ const alabanzas = [
   },
   {
     id: "alabanza3",
-    titulo: "Santo por siempre"
+    titulo: "Un Milagro"
   }
 ];
 
