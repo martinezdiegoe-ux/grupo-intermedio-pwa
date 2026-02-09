@@ -35,15 +35,34 @@ Te lo Debo a Ti.
   },
 
   alabanza2: {
-    titulo: "Digno es el Cordero",
+    titulo: "Necesito de Ti",
     letra: `
-Digno es el Cordero,
-que fue inmolado,
-digno es de recibir
-el poder y la gloria.
+Necesito de Ti
+I
+Muchas veces me pregunte
+¿Qué quieres de mi Señor?
+Si estando en luchas y pruebas mi vida quise seguir.
+Pero no pude, Señor soy muy débil,
+Necesito de ti
+Y ahora no sé qué debo cambiar
+Para poder continuar.
+Coro:
+Necesito de ti para seguir,
+Yo quiero alabarte, también adorarte, quiero seguir;
+“Necesitas de Mí, debes seguir
+Yo quiero limpiarte, también perdonarte
+¿Quieres seguir? Yo estoy junto a ti”.
+II
+Ahora comprendo Señor
+Que quieres de mí
+Pues no entendía cuando me querías,
+Hoy te siento en mí.
+Y ahora puedo continuar mi vida junto a Ti,
+Señor me has librado, también perdonado
+Y hoy puedo seguir.
     `,
-    pdf: "pdf/digno-es-el-cordero.pdf",
-    youtube: "https://www.youtube.com/watch?v=yyyyy"
+    pdf: "pdf/Necesito-de-Ti.pdf",
+    youtube: "https://youtu.be/t2x339dtz9w?si=UXRzz9src89a8D7D"
   }
 };
 
