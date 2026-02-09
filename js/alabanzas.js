@@ -1,7 +1,7 @@
 const alabanzas = [
   {
     id: "alabanza1",
-    titulo: "Cuán grande es Dios"
+    titulo: "Te lo debo a Ti"
   },
   {
     id: "alabanza2",
