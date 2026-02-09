@@ -1,14 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novedades</title>
+
+  <!-- CSS GLOBAL -->
   <link rel="stylesheet" href="css/styles.css">
+
+  <!-- CSS PROPIO -->
+  <link rel="stylesheet" href="css/novedades.css">
 </head>
-<body class="screen-light">
 
-  <h2>Novedades</h2>
+<body>
 
-  <!-- REEMPLAZAR -->
-  <p>Esta semana hay encuentro especial.</p>
+  <h1>📌 Novedades</h1>
 
+  <div class="contenedor">
+
+    <button class="button" onclick="irA('alabanzas.html')">
+      🎶 Alabanzas
+    </button>
+
+    <button class="button" onclick="irA('comunicados.html')">
+      📢 Comunicados
+    </button>
+
+    <button class="button" onclick="enviarMensaje()">
+      ✉️ Mensajes
+    </button>
+
+  </div>
+
+  <script src="js/novedades.js"></script>
 </body>
 </html>
