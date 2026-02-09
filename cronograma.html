@@ -1,38 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Crucigrama Bíblico</title>
-  <link rel="stylesheet" href="css/crucigrama.css">
-</head>
-<body class="pantalla-clara">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cronograma</title>
 
-  <h1>🧩 Crucigrama Bíblico</h1>
+  <link rel="stylesheet" href="css/cronograma.css">
+</head>
+
+<body>
+
+  <h1>📅 Cronograma</h1>
 
   <div class="contenedor">
-
-    <div id="grid" class="grid"></div>
-
-    <div class="pistas">
-      <h2>Pistas</h2>
-
-      <div class="pista">1. Hombre justo del diluvio<br><input id="resp-1"><button onclick="validar(1)">Validar</button></div>
-      <div class="pista">2. Varón que sufrió pruebas<br><input id="resp-2"><button onclick="validar(2)">Validar</button></div>
-      <div class="pista">3. Lugar del nacimiento de Jesús<br><input id="resp-3"><button onclick="validar(3)">Validar</button></div>
-      <div class="pista">4. Ciudad santa<br><input id="resp-4"><button onclick="validar(4)">Validar</button></div>
-      <div class="pista">5. Sin ella es imposible agradar a Dios<br><input id="resp-5"><button onclick="validar(5)">Validar</button></div>
-      <div class="pista">6. Monte de Dios<br><input id="resp-6"><button onclick="validar(6)">Validar</button></div>
-      <div class="pista">7. Caminó con Dios<br><input id="resp-7"><button onclick="validar(7)">Validar</button></div>
-      <div class="pista">8. Regalo de Dios<br><input id="resp-8"><button onclick="validar(8)">Validar</button></div>
-      <div class="pista">9. Barco del diluvio<br><input id="resp-9"><button onclick="validar(9)">Validar</button></div>
-      <div class="pista">10. Dios es…<br><input id="resp-10"><button onclick="validar(10)">Validar</button></div>
-      <div class="pista">11. Hablar con Dios<br><input id="resp-11"><button onclick="validar(11)">Validar</button></div>
-      <div class="pista">12. Nos separa de Dios<br><input id="resp-12"><button onclick="validar(12)">Validar</button></div>
+    <div id="agenda" class="agenda">
+      <!-- Eventos cargados desde JS -->
     </div>
-
   </div>
 
-  <script src="js/crucigrama.js"></script>
+  <script src="js/cronograma.js"></script>
 </body>
 </html>
