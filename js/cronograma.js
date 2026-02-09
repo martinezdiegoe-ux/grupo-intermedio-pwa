@@ -5,22 +5,22 @@
 
 const eventos = [
   {
-    fecha: "Domingo 18 de febrero",
+    fecha: "Sabado 21 de febrero",
     hora: "19:00 hs",
-    titulo: "Reunión Grupo Intermedio",
-    comentario: "Encuentro general con alabanza y reflexión."
+    titulo: "Culto Juvenil Arroyo Leyes",
+    comentario: "Culto de Jovenes, al finalizar se compartirá momento de camaraderia cristiana."
   },
   {
-    fecha: "Viernes 23 de febrero",
-    hora: "20:30 hs",
+    fecha: "Viernes 27 de febrero",
+    hora: "20:00 hs",
     titulo: "Noche de jóvenes",
-    comentario: "Actividad especial con juegos y palabra."
+    comentario: "Juntada en el Terreno de la Iglesia. Actividad especial con juegos y palabra."
   },
   {
-    fecha: "Sábado 2 de marzo",
-    hora: "18:00 hs",
+    fecha: "Sábado 28 de febrero",
+    hora: "18:30 hs",
     titulo: "Ensayo de alabanza",
-    comentario: "Ensayo general del grupo de música."
+    comentario: "Ensayo general del grupo de intermedio."
   }
 ];
 
