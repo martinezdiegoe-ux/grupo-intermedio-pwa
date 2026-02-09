@@ -1,8 +1,9 @@
 // ✏️ ESCRIBÍ LOS COMUNICADOS ACÁ
 const comunicados = [
   "Este sábado nos reunimos a las 18:30 hs. ¡No faltes!",
-  "Recordamos traer Biblia y cuaderno para la próxima reunión.",
-  "El grupo intermedio participará del culto especial el domingo."
+  "Recordamos traer Biblia e Himnario para la próxima reunión.",
+  "El grupo intermedio participará del culto especial el domingo, confirmar asistencia con el hermano Gabriel Salazar."
+  "Recordar que el viernes 27/02 se realizará una juntada, confirmar asistencia y pago con el hermano Matias Rosales"
 ];
 
 // CONTENEDOR
