@@ -65,9 +65,9 @@ Y hoy puedo seguir.
     youtube: "https://youtu.be/t2x339dtz9w?si=UXRzz9src89a8D7D"
   }
 
-   alabanza3: {
-      titulo: "Un Milagro",
-      letra: `
+  alabanza3: {
+    titulo: "Un Milagro",
+    letra: `
 Un Milagro
 I
 “Si tan solo tocare sus vestiduras”
@@ -94,7 +94,6 @@ Porque eso es lo que hoy necesito para recibir.
 Y si hoy tú preguntas: “¿quien fue
 Que extendió su mano de Fe?”
 Yo quisiera decirte: “fui yo que creí y te toqué”.
-
     `,
     pdf: "pdf/Un-Milagro.pdf",
     youtube: "https://youtu.be/PndoQfL6eps?si=uM_vMS3U4Uc6Cydd"
