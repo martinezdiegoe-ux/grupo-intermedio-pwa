@@ -64,6 +64,42 @@ Y hoy puedo seguir.
     pdf: "pdf/Necesito-de-Ti.pdf",
     youtube: "https://youtu.be/t2x339dtz9w?si=UXRzz9src89a8D7D"
   }
+
+   alabanza3: {
+      titulo: "Un Milagro",
+      letra: `
+Un Milagro
+I
+“Si tan solo tocare sus vestiduras”
+Dijo alguien que frustrada se sintió;
+Su problema era tan grande
+Pero en Jesús creyó
+Y abriéndose paso en la gente fue y le tocó.
+Como esa mujer quiero ser
+Si tan solo pudiera creer
+Un milagro hoy recibiría, si pudiera creer.
+Coro:
+Un milagro hoy yo necesito
+Si pudiera creer,
+Yo iría y le tocaría y virtud saldría de Él.
+Un milagro hoy tú necesitas, si pudieras creer
+Cambiaria la historia en tu vida
+Si tan solo hoy pudieras creer.
+II
+Si tan solo pudiera Vencer yo mis dudas
+Oraría en el ambiente del milagro,
+De seguro hoy recibiría,
+De mi Fe Dios se agradaría
+Porque eso es lo que hoy necesito para recibir.
+Y si hoy tú preguntas: “¿quien fue
+Que extendió su mano de Fe?”
+Yo quisiera decirte: “fui yo que creí y te toqué”.
+
+    `,
+    pdf: "pdf/Un-Milagro.pdf",
+    youtube: "https://youtu.be/PndoQfL6eps?si=uM_vMS3U4Uc6Cydd"
+  }
+
 };
 
 // Obtener ID desde URL
