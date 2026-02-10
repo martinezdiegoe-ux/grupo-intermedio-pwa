@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mensajes</title>
+
+  <link rel="stylesheet" href="css/mensajes.css">
+</head>
+
+<body>
+
+  <h1>📨 Mensajes</h1>
+
+  <div class="contenedor">
+
+    <div class="card">
+
+      <h2>Contactanos</h2>
+      <p class="subtitulo">
+        Escribinos y nos pondremos en contacto.
+      </p>
+
+      <!-- FORMULARIO -->
+      <form action="https://formsubmit.co/martinezdiegoe@gmail.com" method="POST">
+
+        <!-- CONFIGURACIÓN FORM SUBMIT -->
+        <input type="hidden" name="_subject" value="Mensaje - Grupo Intermedio Asamblea Cristiana">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="mensajes.html?enviado=ok">
+
+        <label>
+          Nombre
+          <input type="text" name="Nombre" required>
+        </label>
+
+        <label>
+          Email (opcional)
+          <input type="email" name="Email">
+        </label>
+
+        <label>
+          Mensaje
+          <textarea name="Mensaje" rows="5" required></textarea>
+        </label>
+
+        <button type="submit">Enviar mensaje</button>
+      </form>
+
+      <!-- CONFIRMACIÓN -->
+      <div id="confirmacion">
+        📨 Mensaje enviado correctamente. ¡Gracias por comunicarte!
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("enviado") === "ok") {
+      document.getElementById("confirmacion").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
