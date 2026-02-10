@@ -5,64 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mensajes</title>
 
+  <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/mensajes.css">
 </head>
 
 <body>
 
-  <h1>📨 Mensajes</h1>
+  <h1 class="titulo">
+    ✉️ Mensajes
+  </h1>
 
-  <div class="contenedor">
+  <div class="form-container">
 
-    <div class="card">
+    <h2>Contactanos</h2>
+    <p>Escribinos y nos pondremos en contacto.</p>
 
-      <h2>Contactanos</h2>
-      <p class="subtitulo">
-        Escribinos y nos pondremos en contacto.
-      </p>
+    <form 
+      action="https://formsubmit.co/martinezdiegoe@gmail.com" 
+      method="POST"
+    >
 
-      <!-- FORMULARIO -->
-      <form action="https://formsubmit.co/martinezdiegoe@gmail.com" method="POST">
+      <!-- 🔒 CONFIGURACIÓN OCULTA -->
+      <input type="hidden" name="_subject" value="Mensaje desde la app - Grupo Intermedio">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="mensajes-exito.html">
 
-        <!-- CONFIGURACIÓN FORM SUBMIT -->
-        <input type="hidden" name="_subject" value="Mensaje - Grupo Intermedio Asamblea Cristiana">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="mensajes.html?enviado=ok">
+      <!-- CAMPOS -->
+      <label>Nombre</label>
+      <input type="text" name="name" required>
 
-        <label>
-          Nombre
-          <input type="text" name="Nombre" required>
-        </label>
+      <label>Email (opcional)</label>
+      <input type="email" name="email">
 
-        <label>
-          Email (opcional)
-          <input type="email" name="Email">
-        </label>
+      <label>Mensaje</label>
+      <textarea name="message" rows="5" required></textarea>
 
-        <label>
-          Mensaje
-          <textarea name="Mensaje" rows="5" required></textarea>
-        </label>
-
-        <button type="submit">Enviar mensaje</button>
-      </form>
-
-      <!-- CONFIRMACIÓN -->
-      <div id="confirmacion">
-        📨 Mensaje enviado correctamente. ¡Gracias por comunicarte!
-      </div>
-
-    </div>
+      <button type="submit">Enviar mensaje</button>
+    </form>
 
   </div>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("enviado") === "ok") {
-      document.getElementById("confirmacion").style.display = "block";
-    }
-  </script>
-
 </body>
 </html>
+
