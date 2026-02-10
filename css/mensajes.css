@@ -1,79 +1,36 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
-  background: url("../assets/fondo-claro.png") center/cover no-repeat fixed;
-  text-align: center;
-}
-
-h1 {
-  margin-bottom: 20px;
-}
-
-.contenedor {
-  max-width: 480px;
-  margin: auto;
-}
-
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.card h2 {
-  margin-top: 0;
+.fondo-claro {
+  background: #f4f4f4;
+  border-radius: 20px;
+  padding: 25px;
 }
 
 .subtitulo {
-  font-size: 14px;
+  text-align: center;
   margin-bottom: 20px;
   color: #555;
 }
 
-label {
-  display: block;
-  text-align: left;
-  margin-bottom: 15px;
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.formulario label {
+  font-weight: bold;
   font-size: 14px;
 }
 
-input,
-textarea {
+.formulario input,
+.formulario textarea {
   width: 100%;
   padding: 10px;
-  margin-top: 6px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid #ccc;
   font-size: 15px;
 }
 
-textarea {
+.formulario textarea {
+  min-height: 120px;
   resize: vertical;
-}
-
-button {
-  width: 100%;
-  padding: 14px;
-  font-size: 16px;
-  border: none;
-  border-radius: 10px;
-  background: #2d6cdf;
-  color: white;
-  cursor: pointer;
-}
-
-button:hover {
-  opacity: 0.9;
-}
-
-#confirmacion {
-  display: none;
-  margin-top: 20px;
-  padding: 12px;
-  background: #e8f8e8;
-  border-radius: 10px;
-  color: #1f6f1f;
-  font-weight: bold;
 }
