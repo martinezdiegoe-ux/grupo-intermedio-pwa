@@ -11,40 +11,37 @@
 
 <body>
 
-  <h1 class="titulo">
-    ✉️ Mensajes
-  </h1>
+  <div class="contenedor fondo-claro">
 
-  <div class="form-container">
+    <h2>✉️ Mensajes</h2>
+    <p class="subtitulo">Escribinos y nos pondremos en contacto.</p>
 
-    <h2>Contactanos</h2>
-    <p>Escribinos y nos pondremos en contacto.</p>
-
-    <form 
-      action="https://formsubmit.co/martinezdiegoe@gmail.com" 
+    <form
+      action="https://formsubmit.co/martinezdiegoe@gmail.com"
       method="POST"
-    >
+      class="formulario">
 
-      <!-- 🔒 CONFIGURACIÓN OCULTA -->
-      <input type="hidden" name="_subject" value="Mensaje desde la app - Grupo Intermedio">
+      <!-- CONFIGURACIÓN FORMSUBMIT -->
+      <input type="hidden" name="_next" value="mensajes-ok.html">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="mensajes-exito.html">
+      <input type="hidden" name="_subject" value="Mensaje desde la app - Grupo Intermedio">
 
-      <!-- CAMPOS -->
       <label>Nombre</label>
-      <input type="text" name="name" required>
+      <input type="text" name="nombre" required>
 
       <label>Email (opcional)</label>
       <input type="email" name="email">
 
       <label>Mensaje</label>
-      <textarea name="message" rows="5" required></textarea>
+      <textarea name="mensaje" required></textarea>
 
-      <button type="submit">Enviar mensaje</button>
+      <button type="submit" class="button">
+        Enviar mensaje
+      </button>
+
     </form>
 
   </div>
 
 </body>
 </html>
-
