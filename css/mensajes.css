@@ -1,5 +1,7 @@
+/* FORZAMOS FONDO CLARO */
 .fondo-claro {
-  background: #f4f4f4;
+  background-color: #f4f4f4;
+  background-image: none !important;
   border-radius: 20px;
   padding: 25px;
 }
